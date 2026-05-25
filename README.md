@@ -113,15 +113,3 @@ Open `http://localhost:3000` in your web browser. You can immediately log into t
    - **Email**: `admin@lms.com` | **Password**: `password`
 
 ---
-
-## 📐 Explanation of the Evaluation Methodology
-
-The `golden_response.py` script serves as our **Ideal Benchmark Reference Solution** to evaluate the correctness, security, and integrity of the LMS Portal architecture:
-
-1. **Zero-Dependency Portability**: Built entirely using Python standard libraries (`http.server`, `hashlib`, `json`, `uuid`) to guarantee it can execute natively on any development environment with zero library overhead.
-2. **Automated End-to-End Pipeline**: On startup, it triggers an internal client automation routine that sends HTTP request sequences to itself:
-   - **XSS Sanitization Validation**: Submits HTML script payloads to verify the recursive filter successfully strips `<script>` injections.
-   - **Hashing & Authentication Verification**: Registers users, salting and hashing credentials, and verifies that login only passes under exact match hashes.
-   - **State Machine Progress Calculations**: Enroll a user, mark lesson modules as complete, and mathematically verify that progress calculations trigger milestone alerts at exactly **50%** and **100%** completion.
-   - **Email Log Audits**: Records all transactional dispatches in a central file (`emails_python.log`) to audit templates structure, time stamp variables, and recipient addresses.
-3. **Fidelity Mocking**: The Python server exposes identical API paths and JSON responses to those consumed by our React interface, serving as an flawless diagnostic twin of the active JavaScript backend!
