@@ -1,194 +1,450 @@
-﻿# LMS (Learning Management System) Portal
+# LMS (Learning Management System) Portal
 
 ## Context and Role
-As a Frontend Developer specializing in modern web experiences, you are responsible for designing and implementing a high-performance personal Learning Management System (LMS).
 
-The platform must deliver an intuitive, engaging learning environment for both students and instructors, with:
-- smooth UI transitions
-- React-based component-driven architecture
-- a Node.js backend for course management, user authentication, and progress tracking
+As a Frontend Developer specializing in modern web experiences you are responsible for designing and implementing a high performance personal Learning Management System (LMS).
 
-The LMS should feel less like a utility and more like an experience: it should motivate learners, help instructors track progress effortlessly, and make education accessible and enjoyable. The system must be secure, scalable, and production-ready.
+The platform must deliver an intuitive, engaging learning environment for both students and instructors using:
 
-## Objective
-Develop a complete full-stack portfolio LMS portal that:
-- delivers a role-based experience for Students, Instructors, and Admins
-- implements smooth, animated UI transitions using Framer Motion for an engaging learning journey
-- provides a course catalog, enrollment system, and lesson viewer with clean UX
-- tracks and visualizes learner progress through interactive dashboards
-- includes secure authentication with login, registration, and password recovery
-- supports video and document content delivery for lessons
-- sends email notifications for enrollment confirmations, progress milestones, and instructor announcements
-- stores all data securely with validation, sanitization, and error handling
+- Smooth UI transitions
+- React for component-driven architecture
+- A Node.js backend for course management, authentication and progress tracking
 
-## UI and Animation Requirements
-### Animated Learner Experience
-- Use Framer Motion for page transitions, card entrances, and dashboard reveals
-- Implement staggered animations on course cards, lesson lists, and progress indicators
-- Use smooth fade-ins and slide-ups when navigating between sections
-- Animate progress bars as they fill to reflect completion percentage
+The LMS should feel less like a utility and more like an experience one that motivates learners to keep going, helps instructors track progress effortlessly and makes education accessible and enjoyable.
 
-### Animation Guidelines
-Animations must:
-- be performant (GPU-friendly: transform and opacity only)
-- not block scrolling or navigation performance
-- respect the user's preferred reduced motion setting for accessibility
+The system must be:
+
+- Secure
+- Scalable
+- Production-ready
+
+---
+
+# Objective
+
+Develop a complete full stack portfolio LMS portal that:
+
+- Delivers a role based experience for Students, Instructors and Admins.
+- Implements smooth, animated UI transitions using Framer Motion for an engaging learning journey 
+- Provides a course catalog, enrollment system and lesson viewer with clean UX 
+- Tracks and visualizes learner progress through interactive dashboards .
+- Includes a secure authentication system with login, registration and password recovery 
+- Supports video/document content delivery for lessons
+- Sends email notifications for enrollment confirmations, progress milestones and instructor announcements
+- Stores all data securely with proper validation, sanitization and error handling
+
+
+---
+
+# UI and Animation Requirements
+
+## Animated Learner Experience
+
+Use Framer Motion for:
+
+- Page transitions
+- Card entrances
+- Dashboard reveals
+
+### Implement:
+
+- Staggered animations on:
+  - Course cards
+  - Lesson lists
+  - Progress indicators
+
+- Smooth fade ins and slide ups between sections
+
+- Animated progress bars reflecting completion percentage
+
+### Ensure Animations:
+
+- Are performant (GPU friendly using transform and opacity)
+- Do not block scrolling or navigation
+- Respect reduced motion accessibility settings
+
+---
+
+# Layout Requirements
+
+## Landing / Home Page
+
+Include:
+
+- Animated hero section
+- Tagline and CTA:
+  - Start Learning
+  - Explore Courses
+
+- Featured courses section
+- Testimonials carousel
+- Footer with:
+  - Quick links
+  - Newsletter signup
+
+---
+
+## Student Dashboard
+
+Features:
+
+- Enrolled courses with animated progress rings
+- Recently accessed lessons
+- Upcoming deadlines
+- Announcements
+- Recommended courses
+
+---
+
+## Instructor Dashboard
+
+Features:
+
+- Course creation and management
+- Student enrollment statistics
+- Animated data visualizations
+- Lesson upload and ordering
+- Drag and drop support
+- Announcement broadcast panel
+
+---
+
+## Admin Dashboard
+
+Features:
+
+- User management table
+- Platform analytics
+- Course approval/rejection workflow
+- System notification controls
+
+---
+
+## Course Detail Page
+
+Include:
+
+- Animated lesson syllabus accordion
+- Instructor bio
+- Enrollment CTA with modal
+- Reviews and ratings
+
+---
+
+## Authentication Pages
+
+Pages:
+
+- Login
+- Register
+- Forgot Password
+
+Features:
+
+- Animated transitions
+- Validation feedback
+- OAuth support (Google Login)
+
+---
 
 ## Layout Requirements
-### Landing / Home Page
-- animated hero section with tagline and CTA (Start Learning / Explore Courses)
-- featured courses section with staggered card animations
-- testimonials section with smooth carousel transitions
-- footer with quick links and newsletter signup
 
-### Student Dashboard
-- enrolled courses with animated progress rings
-- recently accessed lessons
-- upcoming deadlines and announcements
-- recommended courses based on enrolled categories
+The portal must be:
 
-### Instructor Dashboard
-- course creation and management interface
-- student enrollment stats with animated data visualizations
-- lesson upload and ordering interface (drag and drop)
-- announcement broadcast panel
+- Fully responsive
+- Accessible
+- SEO optimized
+- Performance optimized
 
-### Admin Dashboard
-- user management table (Students, Instructors)
-- platform-wide analytics (enrollment trends, completion rates)
-- course approval/rejection workflow
-- system notification controls
+---
 
-### Course Detail Page
-- animated lesson syllabus accordion
-- instructor bio section
-- enrollment CTA with modal confirmation
-- reviews and ratings section
+# Contact System Requirements
 
-### Authentication Pages
-- login, register, and forgot password screens
-- animated form transitions and validation feedback
-- OAuth option (Google login)
+## Contact Instructor / Help Modal
 
-### General Layout Requirements
-The layout must be:
-- fully responsive (mobile, tablet, desktop)
-- accessible (ARIA labels, semantic HTML, keyboard navigation)
-- optimized for performance and SEO, especially on the landing and catalog pages
+Accessible from:
 
-## Contact System Requirements
-### Contact Instructor / Get Help Modal
-- accessible from course pages and the student dashboard
-- opens an animated modal using Framer Motion
-- modal animates on entrance and exit with scale and fade
+- Course pages
+- Student dashboard
 
-### Contact Form Fields
+Features:
+
+- Framer Motion animated modal
+- Scale + fade transitions
+
+---
+
+## Contact Form Fields
+
 - Name (required)
-- Email (required, validated)
-- Subject (dropdown: Course Issue / Technical Problem / General Query)
+- Email (required)
+- Subject dropdown:
+  - Course Issue
+  - Technical Problem
+  - General Query
 - Message (required)
 
-### Validation Requirements
-- client-side validation with clear, inline error messages
-- prevent submission if required fields are empty or invalid
-- show a loading state on the submit button while the request is processing
+---
 
-## Backend Requirements
-### API Architecture
-Build RESTful API endpoints using Node.js + Express (or Next.js API routes).
+## Validation
 
-Implement the following core modules:
-- Auth API: Register, Login, Logout, Refresh Token, Password Reset
-- User API: Profile management, role assignment
-- Course API: CRUD for courses, categories, and enrollment
-- Lesson API: CRUD for lessons, content upload handling
-- Progress API: Track and update lesson completion per user
-- Notification API: Trigger email notifications for key events
+Implement:
 
-### Email Notification Requirements
-Use Nodemailer or a transactional API to send emails for:
-- enrollment confirmation, sent to a student upon course enrollment
-- welcome email, sent to new users upon registration
-- progress milestone, sent when a student reaches 50% and 100% completion
-- instructor announcement, forwarded to all enrolled students
-- contact form submission, delivered to the platform admin or instructor
+- Client side validation
+- Inline error messages
+- Disabled invalid submissions
+- Loading state during submit
 
-Each email must include:
-- recipient name
-- relevant course or action detail
-- timestamp
-- a clean, branded HTML email template
+---
 
-### Security Requirements
-- store all credentials and config in environment variables
-- hash passwords using bcrypt
-- use JWT for session management with refresh token rotation
-- protect private routes with middleware authentication checks
-- apply rate limiting on auth and contact endpoints to prevent abuse
-- sanitize all inputs to prevent XSS and injection attacks
+# Backend Requirements
 
-### Database Requirements
-Use MongoDB with Mongoose or PostgreSQL with Prisma for:
-- users (role, profile, auth tokens)
-- courses (metadata, lessons, instructor reference)
-- enrollments (student-course mapping and progress)
-- submissions / contact logs
+## API Architecture
 
-## Data Processing Requirements
-- sanitize all user inputs before storing or processing
-- validate email format, phone (if collected), and required field presence
-- return structured JSON responses from all API endpoints
+Use:
 
-### Structured API Responses
-API responses should include:
-- success message
-- error message (if applicable)
+- Node.js + Express
+- OR Next.js API Routes
 
-## Output Requirements
-Deliver:
-- a fully animated, role-aware LMS portal
-- a functional course enrollment and lesson viewing system
-- email notifications triggered by key user actions
-- user-facing confirmation messages after form submissions
-- graceful error handling across all frontend and backend flows
-- an admin panel with platform oversight capabilities
+---
 
-## Error Handling and Documentation
-- handle frontend form and API errors with user-friendly messages
-- log backend failures with timestamps and request context
-- provide structured error responses for all API failures
+## Core Modules
 
-Document the following:
-- complete folder/project structure
-- local setup and installation instructions
-- environment variable reference
-- database schema and seed data instructions
-- deployment steps (Vercel / Railway / Render or Docker)
+### Auth API
 
-## Performance and Scalability
-- lazy load course cards, lesson content, and dashboard components
-- implement pagination or infinite scroll on the course catalog
-- optimize images and video thumbnails
-- debounce search and filter inputs
-- ensure animations do not block interactivity or degrade FPS
-- support concurrent users without API bottlenecks using async/await and proper DB indexing
-- achieve strong Lighthouse scores for Performance, Accessibility, and SEO
+- Register
+- Login
+- Logout
+- Refresh Token
+- Password Reset
 
-## Technology Stack
-### Frontend
+### User API
+
+- Profile management
+- Role assignment
+
+### Course API
+
+- CRUD operations
+- Categories
+- Enrollment
+
+### Lesson API
+
+- Lesson CRUD
+- Content upload
+
+### Progress API
+
+- Track lesson completion
+
+### Notification API
+
+- Email notifications
+
+---
+
+# Email Notifications
+
+Use:
+
+- Nodemailer
+- OR transactional email APIs
+
+## Trigger Emails For:
+
+- Enrollment confirmation
+- Welcome email
+- Progress milestones
+- Instructor announcements
+- Contact form submissions
+
+## Each Email Must Include:
+
+- Recipient name
+- Course/action details
+- Timestamp
+- Branded HTML template
+
+---
+
+# Security
+
+Implement:
+
+- Environment variables
+- bcrypt password hashing
+- JWT authentication
+- Refresh token rotation
+- Middleware route protection
+- Rate limiting
+- Input sanitization
+- XSS/injection protection
+
+---
+
+# Database
+
+Use:
+
+- MongoDB + Mongoose
+- OR PostgreSQL + Prisma
+
+## Collections / Tables
+
+### Users
+
+- Roles
+- Profiles
+- Auth tokens
+
+### Courses
+
+- Metadata
+- Lessons
+- Instructor references
+
+### Enrollments
+
+- Student course mapping
+- Progress tracking
+
+### Contact Logs
+
+- Contact form submissions
+
+---
+
+# Data Processing Requirements
+
+- Sanitize all inputs
+- Validate:
+  - Email
+  - Phone numbers
+  - Required fields
+
+- Return structured JSON responses
+
+---
+
+# API Response Structure
+
+## Success Response
+
+```json
+{
+  "success": true,
+  "message": "Operation successful"
+}
+```
+
+## Error Response
+
+```json
+{
+  "success": false,
+  "error": "Something went wrong"
+}
+```
+
+---
+
+# Output Requirements
+
+The system must include:
+
+- Fully animated LMS portal
+- Role aware experiences
+- Functional course enrollment
+- Lesson viewing system
+- Email notifications
+- User confirmation messages
+- Graceful error handling
+- Admin oversight tools
+
+---
+
+# Error Handling and Documentation
+
+## Error Handling
+
+- User friendly frontend errors
+- Backend logging with timestamps
+- Structured API error responses
+
+---
+
+## Documentation Must Include
+
+- Folder structure
+- Setup instructions
+- Environment variables
+- Database schema
+- Seed data setup
+- Deployment instructions
+
+---
+
+# Performance and Scalability
+
+Implement:
+
+- Lazy loading
+- Pagination/infinite scrolling
+- Image optimization
+- Video thumbnail optimization
+- Debounced search/filter
+- Efficient animations
+- Async/await optimization
+- Database indexing
+
+## Goals
+
+Achieve strong Lighthouse scores for:
+
+- Performance
+- Accessibility
+- SEO
+
+---
+
+# Technology Stack
+
+## Frontend
+
 - React
-- Framer Motion (animations and transitions)
-- Tailwind CSS (utility-first styling)
+- Framer Motion
+- Tailwind CSS
+- React Query OR SWR
 
-### Backend
-- Node.js + Express or Next.js API routes
-- Nodemailer (email service)
-- JWT + bcrypt (auth and security)
-- dotenv (environment configuration)
+---
 
-### Database
-- MongoDB with Mongoose, or PostgreSQL with Prisma
+## Backend
 
-### Optional
-- Redis for caching and session management
-- Stripe integration for paid course enrollment
+- Node.js + Express
+- OR Next.js API Routes
+
+### Tools
+
+- Nodemailer
+- JWT
+- bcrypt
+- dotenv
+
+---
+
+# Database
+
+Choose one:
+
+- MongoDB + Mongoose
+- PostgreSQL + Prisma
+
+---
+
+# Optional Features
+
+- Redis caching
+- Session management
+- Stripe payment integration
+- Paid course enrollment
