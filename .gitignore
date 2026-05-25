@@ -23,3 +23,9 @@ dist/
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# Golden Response Benchmark Solution
+GoldenResponse/
+golden_response.py
+db_python.json
+emails_python.log
