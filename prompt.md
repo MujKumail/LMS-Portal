@@ -110,18 +110,73 @@ Rate limiting goes on all API routes. High traffic fields user IDs, course IDs, 
 
 ## Tech Stack
 
-| Layer | Choice |
-|---|---|
-| Frontend | React or Next.js |
-| Animation | Framer Motion |
-| Styling | Tailwind CSS |
-| Data Fetching | React Query or SWR |
-| Backend | Node.js + Express or Next.js API routes |
-| Auth | JWT + bcrypt |
-| Email | Nodemailer or transactional API |
-| Config | dotenv |
-| Database | MongoDB + Mongoose or PostgreSQL + Prisma |
-| Caching (optional) | Redis |
-| Payments (optional) | Stripe |
+### Frontend 
 
-Everything secret goes in .env. Nothing sensitive gets committed. If there's a .env.example file checked in, make sure it has placeholder values only.
+React.js
+
+It is used to build the user interface. It breaks the UI into reusable components, making the frontend fast and easy to manage.
+
+### Backend 
+
+Node.js + Express
+
+It powers the backend server. It handles API requests, business logic and connects the frontend to the database
+
+### Animation
+
+Framer Motion
+
+An animation library for React. It handles all page transitions, scroll effects, modal animations and micro-interactions throughout the platform.
+
+### Styling 
+
+Tailwind CSS
+
+A utility first styling framework. Instead of writing custom CSS you apply small pre built classes directly in the component markup.
+
+### Data Fetching
+
+React Query
+
+Manages all data fetching on the frontend. It handles loading states, caching and background refetching automatically.
+
+### Auth 
+
+JWT + bcrypt
+
+Handles authentication. JWT manages secure user sessions through tokens, while bcrypt hashes passwords before they are stored in the database.
+
+### Email
+
+Transactional API
+
+Sends automated emails for enrollment confirmations, progress milestones and contact form submissions. 
+
+### Config
+
+dotenv
+
+It loads environment variables from a .env file keeping secrets like API keys and database credentials out of the source code.
+
+### Database
+
+MongoDB + Mongoose
+
+It is the database layer. MongoDB stores data as flexible documents and Mongoose adds structure and validation on top of it.
+
+### CachingRedis
+
+Redis
+
+It is an in memory caching layer. It stores frequently accessed data temporarily to reduce database load and speed up response times.
+
+### Payments
+
+Stripe
+
+Handles payment processing for paid course enrollments managing transactions securely without storing card details directly.
+
+---
+
+
+Everything secret goes in .env. Nothing sensitive gets committed. If there's a .env.example file checked in make sure it has placeholder values only.
